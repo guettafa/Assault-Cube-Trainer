@@ -21,15 +21,15 @@
     <ClCompile Include="Proc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Proc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Mem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
