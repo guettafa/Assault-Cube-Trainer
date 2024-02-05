@@ -4,7 +4,6 @@
 #include <string>
 
 namespace Offsets {
-
 	namespace Player {
 
 		// Player info
@@ -20,11 +19,9 @@ namespace Offsets {
 		constexpr uintptr_t flPosX = 0x0;
 		constexpr uintptr_t flPosY = 0x0;
 		constexpr uintptr_t flPosZ = 0x0;
-
 	}
-
 	namespace Gun{
-		
+
 		constexpr uintptr_t intAmmo = 0x150;
 	}
 }

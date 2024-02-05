@@ -15,5 +15,10 @@ namespace Process {
 		of the target process
 	*/
 	DWORD GetProcId(const std::wstring &procName);
+
+	/*
+		Used to return the module base
+		address of the target process
+	*/
 	uintptr_t GetModuleBaseAddrs(const std::wstring &moduleName, DWORD procId);
 }
