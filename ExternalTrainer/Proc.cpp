@@ -1,7 +1,5 @@
 
 #include "Proc.h"
-#include <TlHelp32.h>
-#include <iostream>
 
 HANDLE Process::AttachProc(DWORD procId) {
 	return OpenProcess(
@@ -39,6 +37,7 @@ DWORD Process::GetProcId(const std::wstring &procName) {
 		}
 	}
 	// Nothing found ;(
+	wprintf(L"Cannot found %s instance\n", procName);
 	CloseHandle(hSnap);
 	exit(EXIT_FAILURE);
 }

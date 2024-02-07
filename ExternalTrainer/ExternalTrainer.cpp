@@ -12,15 +12,17 @@ int main()
 	client.dwProcessId = Process::GetProcId(client.wstrClientName);
 	client.hdlProcess = Process::AttachProc(client.dwProcessId);
 	client.moduleAddress = Process::GetModuleBaseAddrs(client.wstrClientName, client.dwProcessId);
-	
-	int healthValue = 200;
-	uintptr_t healthAddrs = 0x0082F644;
 
+	uintptr_t localPlayer = Memory::Read<uintptr_t>(client.hdlProcess, client.moduleAddress + Player::localEntityPlayerPtr);
+	uintptr_t healthAddrs = localPlayer + Player::intHealth;
 
+	int healthValue = 240;
+
+	printf("%X\n", healthAddrs);
 	printf("%zX\n", client.moduleAddress);
 	printf("%d\n", client.dwProcessId);
-	printf("Read: %d\n", Memory::Read<int>(client.hdlProcess, reinterpret_cast<LPCVOID>(healthAddrs), healthValue));
-	printf("Write: %d\n", Memory::Write<int>(client.hdlProcess, reinterpret_cast<LPVOID>(healthAddrs), healthValue));
+	Memory::Write<int>(client.hdlProcess,  healthAddrs, healthValue);
+	//printf("Write: %d\n", Memory::Write<int>(client.hdlProcess, healthAddrs, healthValue));
 	
 
 }

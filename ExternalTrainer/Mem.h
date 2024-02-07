@@ -3,20 +3,24 @@
 
 namespace Memory {
 
+	// Thx Anas
 	template<typename T>
-	inline BOOL Read(HANDLE hProc, LPCVOID addressToRead, T saveDataIn) {
-		return ReadProcessMemory(hProc, addressToRead, &saveDataIn, sizeof(T), NULL);
+	inline T Read(HANDLE hProc, uintptr_t source) {
+		T destination;
+		ReadProcessMemory(hProc, reinterpret_cast<LPCVOID>(source), &destination, sizeof(T), NULL);
+		return destination;
 	}
 
 	template<typename T>
-	inline BOOL Write(HANDLE hProc, LPVOID addressToModify, T dataToWrite) {
-		return WriteProcessMemory(
+	inline VOID Write(HANDLE hProc, int32_t addressToModify, T dataToWrite) {
+		WriteProcessMemory(
 			hProc,
-			addressToModify,
+			reinterpret_cast<LPVOID>(addressToModify),
 			&dataToWrite,
 			sizeof(T),
 			NULL);
 	}
+	
 }
 
 
