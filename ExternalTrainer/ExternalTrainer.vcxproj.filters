@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ExternalTrainer.cpp">
+    <ClCompile Include="src\ExternalTrainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Proc.cpp">
+    <ClCompile Include="src\Proc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Proc.h">
+    <ClInclude Include="include\Proc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mem.h">
+    <ClInclude Include="include\Mem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
+    <ClInclude Include="include\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
